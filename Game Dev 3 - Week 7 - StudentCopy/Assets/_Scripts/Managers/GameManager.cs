@@ -2,11 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GameDevWithMarco.Singleton;
+using GameDevWithMarco.Data;
 
 namespace GameDevWithMarco.Managers
 {
-    public class GameManager : Singleton<GameManager>
+    public class GameManager : MonoBehaviour
     {
+        [SerializeField] GlobalData globalData;
+
+        private void Start()
+        {
+            if (globalData != null)
+            {
+                globalData.ResetsScore();
+                globalData.SetTheScoreRequiredToWin();
+            }
+            else
+            {
+                Debug.LogWarning("The Global Data SO has not been assigned to the Game Manager");
+            }
+        }
+
+        public void GameWon()
+        {
+            Time.timeScale = 0;
+            Debug.Log("GAME WON");
+        }
+
         private int score;
 
         public int Score
