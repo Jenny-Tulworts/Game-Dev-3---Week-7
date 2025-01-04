@@ -4,6 +4,7 @@ using GameDevWithMarco.CameraStuff;
 using GameDevWithMarco.ObserverPattern;
 using GameDevWithMarco.Managers;
 
+
 namespace GameDevWithMarco.Traps
 {
     public class PushAwayOnCollision : MonoBehaviour
