@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using GameDevWithMarco.Singleton;
 using GameDevWithMarco.Data;
+using UnityEngine.SceneManagement;
 
 namespace GameDevWithMarco.Managers
 {
@@ -26,7 +27,7 @@ namespace GameDevWithMarco.Managers
         public void GameWon()
         {
             Time.timeScale = 0;
-            Debug.Log("GAME WON");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
         private int score;
